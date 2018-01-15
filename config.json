@@ -1,0 +1,44 @@
+{
+	"type": "header",
+	"data": "Staged pinch of Kr liner profile obtained from experimental measurement."
+}
+{
+	"type": "file_name",
+	"name": "KrDD_2D_0.8_0.02_1eV"
+}
+{
+	"type": "header",
+	"data": "! 01 - 1D w/ sesame tables\n! 02 - max diff set to limit tdiff using 20 microns\n! 03 - etamax 6.0e3 throughout"
+}
+{
+	"type": "var",
+	"name": "contrl",
+	"description": "! Simple Z-Pinch test case using PBFZ refurbished class machine.\n! ideal MHD",
+	"data":[
+		{
+			"section_description": "time control parameters",
+			"parameters": [
+				{
+					"name": "twfn",
+					"value": "200.0e-9",
+					"description": "problem end time"
+				},
+				{
+					"name": "dt",
+					"value": "1.0e-13",
+					"description": "initial time step"
+				},
+				{
+					"name": "dtmax",
+					"value": "1.0e-9",
+					"description": "maximum time step"
+				},
+				{
+					"name": "dtstopr",
+					"value": "1.0e-20",
+					"description": "minimum time step, stop if dt < (dtstopr * t)"
+				},
+			]
+		}
+	]
+}
