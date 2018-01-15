@@ -117,11 +117,11 @@
           "value": ".false.",
           "description": "if true"
         },
-        // {
-        //   "name": "!   nigen",
-        //   "value": "10",
-        //   "description": "# of initial Jacobi iterations of ideal mesh gen"
-        // },
+        {
+          "name": "!   nigen",
+          "value": "10",
+          "description": "# of initial Jacobi iterations of ideal mesh gen"
+        },
         {
           "name": "niter",
           "value": "3",
@@ -142,16 +142,16 @@
           "value": "5",
           "description": "number of smoothing steps applied to the adaptiv"
         },
-        // {
-        //   "name": "!   wrelax",
-        //   "value": "1",
-        //   "description": "smooths adaptivity function of wrelax # of cells"
-        // },
-        // {
-        //   "name": "!    mu",
-        //   "value": "1.0",
-        //   "description": "coefficient for artificial viscosity"
-        // },
+        {
+          "name": "!   wrelax",
+          "value": "1",
+          "description": "smooths adaptivity function of wrelax # of cells"
+        },
+        {
+          "name": "!    mu",
+          "value": "1.0",
+          "description": "coefficient for artificial viscosity"
+        },
         {
           "name": "eps",
           "value": "1.0e-6",
@@ -187,11 +187,11 @@
           "value": "'integrtd'",
           "description": ""
         },
-        // {
-        //   "name": "!    radcupl",
-        //   "value": ".true.",
-        //   "description": ""
-        // },
+        {
+          "name": "!    radcupl",
+          "value": ".true.",
+          "description": ""
+        },
         {
           "name": "radflxlt",
           "value": ".true.",
@@ -202,11 +202,11 @@
           "value": "0.001",
           "description": ""
         },
-        // {
-        //   "name": "!    flxlmt",
-        //   "value": "0.0",
-        //   "description": ""
-        // },
+        {
+          "name": "!    flxlmt",
+          "value": "0.0",
+          "description": ""
+        },
         {
           "name": "ciron",
           "value": ".true.",
@@ -257,21 +257,21 @@
           "value": "1.0e-4",
           "description": "convergence toleranc for relative error in tempe"
         },
-        // {
-        //   "name": "!   tdtolcg",
-        //   "value": "0.25",
-        //   "description": "convergence criterion for the maximum ratio of r"
-        // },
-        // {
-        //   "name": "!    arttherm",
-        //   "value": ".false.",
-        //   "description": "smoother for an artificla thermal conductivity"
-        // },
-        // {
-        //   "name": "!    artthmlt",
-        //   "value": "3.0",
-        //   "description": "overall multiplier of the artificial thermal co"
-        // },
+        {
+          "name": "!   tdtolcg",
+          "value": "0.25",
+          "description": "convergence criterion for the maximum ratio of r"
+        },
+        {
+          "name": "!    arttherm",
+          "value": ".false.",
+          "description": "smoother for an artificla thermal conductivity"
+        },
+        {
+          "name": "!    artthmlt",
+          "value": "3.0",
+          "description": "overall multiplier of the artificial thermal co"
+        },
         {
           "name": "bdiff",
           "value": ".true.",
@@ -297,11 +297,11 @@
           "value": "1.0e-4",
           "description": "convergence tolerance for relative error in B-fi"
         },
-        // {
-        //   "name": "!   rdtolcg",
-        //   "value": "0.25",
-        //   "description": "convergence criterion for the maximum ratio of r"
-        // }
+        {
+          "name": "!   rdtolcg",
+          "value": "0.25",
+          "description": "convergence criterion for the maximum ratio of r"
+        }
       ]
     },
     "type": "var",
@@ -414,11 +414,11 @@
           "value": "1.0e3",
           "description": "tdiff of 66.67 fs over 20 micron"
         },
-        // {
-        //   "name": "! 20 micron/66.67 fs",
-        //   "value": "3.0x10^8 m/s",
-        //   "description": ""
-        // }
+        {
+          "name": "! 20 micron/66.67 fs",
+          "value": "3.0x10^8 m/s",
+          "description": ""
+        }
       ]
     },
     "type": "var",
@@ -508,16 +508,16 @@
           "value": "3.32e-7",
           "description": ""
         },
-        // {
-        //   "name": "!    sieiflr(1)",
-        //   "value": "1.0e6",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    sieflr(1)",
-        //   "value": "1.0e6",
-        //   "description": ""
-        // },
+        {
+          "name": "!    sieiflr(1)",
+          "value": "1.0e6",
+          "description": ""
+        },
+        {
+          "name": "!    sieflr(1)",
+          "value": "1.0e6",
+          "description": ""
+        },
         {
           "name": "teflr(1)",
           "value": "1.0",
@@ -553,96 +553,96 @@
           "value": "2.0",
           "description": ""
         },
-        // {
-        //   "name": "!    matnam(2)",
-        //   "value": "'ne'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    sesanam(2)",
-        //   "value": "'ne-pl'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    eosmodl(2)",
-        //   "value": "'tabular'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    mattabs(1,20)",
-        //   "value": "9541",
-        //   "description": "19541"
-        // },
-        // {
-        //   "name": "!    nfemodl(2)",
-        //   "value": "'zfree2'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    opacity(2)",
-        //   "value": "'neon'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    gm1(2)",
-        //   "value": "0.66666667",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    an(2)",
-        //   "value": "10.0",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    aw(2)",
-        //   "value": "20.18",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    matnam(2)",
-        //   "value": "'ar'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    sesanam(2)",
-        //   "value": "'ar-mrc'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    eosmodl(2)",
-        //   "value": "'tabular'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    mattabs(1,26)",
-        //   "value": "9517",
-        //   "description": "18517"
-        // },
-        // {
-        //   "name": "!    nfemodl(2)",
-        //   "value": "'zfree3'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    opacity(2)",
-        //   "value": "'tabular'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    gm1(2)",
-        //   "value": "0.66666667",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    an(2)",
-        //   "value": "18.0",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    aw(2)",
-        //   "value": "39.948",
-        //   "description": ""
-        // },
+        {
+          "name": "!    matnam(2)",
+          "value": "'ne'",
+          "description": ""
+        },
+        {
+          "name": "!    sesanam(2)",
+          "value": "'ne-pl'",
+          "description": ""
+        },
+        {
+          "name": "!    eosmodl(2)",
+          "value": "'tabular'",
+          "description": ""
+        },
+        {
+          "name": "!    mattabs(1,20)",
+          "value": "9541",
+          "description": "19541"
+        },
+        {
+          "name": "!    nfemodl(2)",
+          "value": "'zfree2'",
+          "description": ""
+        },
+        {
+          "name": "!    opacity(2)",
+          "value": "'neon'",
+          "description": ""
+        },
+        {
+          "name": "!    gm1(2)",
+          "value": "0.66666667",
+          "description": ""
+        },
+        {
+          "name": "!    an(2)",
+          "value": "10.0",
+          "description": ""
+        },
+        {
+          "name": "!    aw(2)",
+          "value": "20.18",
+          "description": ""
+        },
+        {
+          "name": "!    matnam(2)",
+          "value": "'ar'",
+          "description": ""
+        },
+        {
+          "name": "!    sesanam(2)",
+          "value": "'ar-mrc'",
+          "description": ""
+        },
+        {
+          "name": "!    eosmodl(2)",
+          "value": "'tabular'",
+          "description": ""
+        },
+        {
+          "name": "!    mattabs(1,26)",
+          "value": "9517",
+          "description": "18517"
+        },
+        {
+          "name": "!    nfemodl(2)",
+          "value": "'zfree3'",
+          "description": ""
+        },
+        {
+          "name": "!    opacity(2)",
+          "value": "'tabular'",
+          "description": ""
+        },
+        {
+          "name": "!    gm1(2)",
+          "value": "0.66666667",
+          "description": ""
+        },
+        {
+          "name": "!    an(2)",
+          "value": "18.0",
+          "description": ""
+        },
+        {
+          "name": "!    aw(2)",
+          "value": "39.948",
+          "description": ""
+        },
         {
           "name": "matnam(2)",
           "value": "'kr'",
@@ -688,51 +688,51 @@
           "value": "83.8",
           "description": ""
         },
-        // {
-        //   "name": "!    matnam(2)",
-        //   "value": "'xe'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    sesanam(2)",
-        //   "value": "'xe'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    eosmodl(2)",
-        //   "value": "'tabular'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    mattabs(3,30)",
-        //   "value": "5190",
-        //   "description": "15190"
-        // },
-        // {
-        //   "name": "!    nfemodl(2)",
-        //   "value": "'zfree3'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    opacity(2)",
-        //   "value": "'xenon'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    gm1(2)",
-        //   "value": "0.66666667",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    an(2)",
-        //   "value": "54.0",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    aw(2)",
-        //   "value": "131.3",
-        //   "description": ""
-        // },
+        {
+          "name": "!    matnam(2)",
+          "value": "'xe'",
+          "description": ""
+        },
+        {
+          "name": "!    sesanam(2)",
+          "value": "'xe'",
+          "description": ""
+        },
+        {
+          "name": "!    eosmodl(2)",
+          "value": "'tabular'",
+          "description": ""
+        },
+        {
+          "name": "!    mattabs(3,30)",
+          "value": "5190",
+          "description": "15190"
+        },
+        {
+          "name": "!    nfemodl(2)",
+          "value": "'zfree3'",
+          "description": ""
+        },
+        {
+          "name": "!    opacity(2)",
+          "value": "'xenon'",
+          "description": ""
+        },
+        {
+          "name": "!    gm1(2)",
+          "value": "0.66666667",
+          "description": ""
+        },
+        {
+          "name": "!    an(2)",
+          "value": "54.0",
+          "description": ""
+        },
+        {
+          "name": "!    aw(2)",
+          "value": "131.3",
+          "description": ""
+        },
         {
           "name": "resmodl(2)",
           "value": "'tabular'",
@@ -743,16 +743,16 @@
           "value": "'tabular'",
           "description": ""
         },
-        // {
-        //   "name": "!    atamin(2)",
-        //   "value": "0",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    atamax(2)",
-        //   "value": "0",
-        //   "description": ""
-        // },
+        {
+          "name": "!    atamin(2)",
+          "value": "0",
+          "description": ""
+        },
+        {
+          "name": "!    atamax(2)",
+          "value": "0",
+          "description": ""
+        },
         {
           "name": "rof(2)",
           "value": "1.0e-8",
@@ -788,11 +788,11 @@
           "value": "1.0e3",
           "description": ""
         },
-        // {
-        //   "name": "!    rofsiecp(2)",
-        //   "value": "1.0e-7",
-        //   "description": ""
-        // },
+        {
+          "name": "!    rofsiecp(2)",
+          "value": "1.0e-7",
+          "description": ""
+        },
         {
           "name": "sieiflr(2)",
           "value": "1.0e8",
@@ -961,61 +961,61 @@
           "value": "10",
           "description": "jcells(5)"
         },
-        // {
-        //   "name": "!   gdvl(1)",
-        //   "value": "3.50",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!   gdvl(2)",
-        //   "value": "3.50",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!   gdvl(3)",
-        //   "value": "3.50",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!   gdvl(4)",
-        //   "value": "3.50",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!   gdvl(5)",
-        //   "value": "3.50",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!   prsgrwt(1)",
-        //   "value": "1.0e9",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!   prsgrwt(2)",
-        //   "value": "1.0e9",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!   prsgrwt(3)",
-        //   "value": "1.0e8",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!   prsgrwt(4)",
-        //   "value": "1.0e8",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!   prsgrwt(5)",
-        //   "value": "1.0e7",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!  gaussian function: ro",
-        //   "value": "roi * exp(-abs(rnomden) * (r - r0)^2)",
-        //   "description": ""
-        // },
+        {
+          "name": "!   gdvl(1)",
+          "value": "3.50",
+          "description": ""
+        },
+        {
+          "name": "!   gdvl(2)",
+          "value": "3.50",
+          "description": ""
+        },
+        {
+          "name": "!   gdvl(3)",
+          "value": "3.50",
+          "description": ""
+        },
+        {
+          "name": "!   gdvl(4)",
+          "value": "3.50",
+          "description": ""
+        },
+        {
+          "name": "!   gdvl(5)",
+          "value": "3.50",
+          "description": ""
+        },
+        {
+          "name": "!   prsgrwt(1)",
+          "value": "1.0e9",
+          "description": ""
+        },
+        {
+          "name": "!   prsgrwt(2)",
+          "value": "1.0e9",
+          "description": ""
+        },
+        {
+          "name": "!   prsgrwt(3)",
+          "value": "1.0e8",
+          "description": ""
+        },
+        {
+          "name": "!   prsgrwt(4)",
+          "value": "1.0e8",
+          "description": ""
+        },
+        {
+          "name": "!   prsgrwt(5)",
+          "value": "1.0e7",
+          "description": ""
+        },
+        {
+          "name": "!  gaussian function: ro",
+          "value": "roi * exp(-abs(rnomden) * (r - r0)^2)",
+          "description": ""
+        },
         {
           "name": "matnami(1)",
           "value": "'d'",
@@ -1031,36 +1031,36 @@
           "value": "'D2_density_180us.txt'",
           "description": ""
         },
-        // {
-        //   "name": "!    roi(1)",
-        //   "value": "3.0e-3",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    roinit(1)",
-        //   "value": "'gausaxis'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    rnomden(1)",
-        //   "value": "9.0e1",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    matnami(2)",
-        //   "value": "'d'",
-        //   "description": "roi(2)"
-        // },
-        // {
-        //   "name": "!    matnami(1)",
-        //   "value": "'ar'",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    roinit(1)",
-        //   "value": "'cfdintp'",
-        //   "description": ""
-        // },
+        {
+          "name": "!    roi(1)",
+          "value": "3.0e-3",
+          "description": ""
+        },
+        {
+          "name": "!    roinit(1)",
+          "value": "'gausaxis'",
+          "description": ""
+        },
+        {
+          "name": "!    rnomden(1)",
+          "value": "9.0e1",
+          "description": ""
+        },
+        {
+          "name": "!    matnami(2)",
+          "value": "'d'",
+          "description": "roi(2)"
+        },
+        {
+          "name": "!    matnami(1)",
+          "value": "'ar'",
+          "description": ""
+        },
+        {
+          "name": "!    roinit(1)",
+          "value": "'cfdintp'",
+          "description": ""
+        },
         {
           "name": "ldnblk(1)",
           "value": "0.02",
@@ -1321,31 +1321,31 @@
           "value": "'axis'",
           "description": ""
         },
-        // {
-        //   "name": "!    ionvel(1)",
-        //   "value": ".true.",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    ionvel(2)",
-        //   "value": ".true.",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    ionvel(3)",
-        //   "value": ".true.",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    ionvel(4)",
-        //   "value": ".true.",
-        //   "description": ""
-        // },
-        // {
-        //   "name": "!    ionvel(5)",
-        //   "value": ".true.",
-        //   "description": ""
-        // }
+        {
+          "name": "!    ionvel(1)",
+          "value": ".true.",
+          "description": ""
+        },
+        {
+          "name": "!    ionvel(2)",
+          "value": ".true.",
+          "description": ""
+        },
+        {
+          "name": "!    ionvel(3)",
+          "value": ".true.",
+          "description": ""
+        },
+        {
+          "name": "!    ionvel(4)",
+          "value": ".true.",
+          "description": ""
+        },
+        {
+          "name": "!    ionvel(5)",
+          "value": ".true.",
+          "description": ""
+        }
       ]
     },
     "type": "var",
