@@ -1,1441 +1,1711 @@
-[
-  {
-    "data": {
-      "parameters": [
-        {
-          "name": "twfn",
-          "value": "200.0e-9",
-          "description": "problem end time"
-        },
-        {
-          "name": "dt",
-          "value": "1.0e-13",
-          "description": "initial time step"
-        },
-        {
-          "name": "dtmax",
-          "value": "1.0e-9",
-          "description": "maximum time step"
-        },
-        {
-          "name": "dtstopr",
-          "value": "1.0e-20",
-          "description": "minimum time step"
-        },
-        {
-          "name": "cyl",
-          "value": "1.",
-          "description": "cylindrical geometry"
-        },
-        {
-          "name": "eoson",
-          "value": ".true.",
-          "description": "calculate EOS"
-        },
-        {
-          "name": "trackon",
-          "value": ".true.",
-          "description": "allow materials to mix"
-        },
-        {
-          "name": "tsplit",
-          "value": "1",
-          "description": "ion and electron temperatures calculated separat"
-        },
-        {
-          "name": "hydron",
-          "value": ".true.",
-          "description": "solve ideal MHD"
-        },
-        {
-          "name": "rotate",
-          "value": ".true.",
-          "description": "allows the out-of-plane component of velocity t"
-        },
-        {
-          "name": "strength",
-          "value": ".false.",
-          "description": "switch for strength-of-materials package"
-        },
-        {
-          "name": "jouhtmlt",
-          "value": "1.0",
-          "description": "multiplier for Ohmic heating"
-        },
-        {
-          "name": "hallon",
-          "value": ".false.",
-          "description": "switch to include Hall effect in resistive diffu"
-        },
-        {
-          "name": "neutrons",
-          "value": ".true.",
-          "description": "calculate neutron yield"
-        },
-        {
-          "name": "alphaheat",
-          "value": ".true.",
-          "description": "calculate alpha-particle heating"
-        },
-        {
-          "name": "aresvac",
-          "value": "1.0e4",
-          "description": "Anomalous diffusivity in vacuum region"
-        },
-        {
-          "name": "theb",
-          "value": "0.5",
-          "description": "use centered time difference"
-        },
-        {
-          "name": "courmax",
-          "value": "0.99",
-          "description": "max(dtcour)"
-        },
-        {
-          "name": "rmvolrm",
-          "value": "0.3",
-          "description": "dtc set such that no more than rmvolrm of a cell"
-        },
-        {
-          "name": "volratm",
-          "value": "0.7",
-          "description": "dtvol set such that no cell's volume changes by"
-        },
-        {
-          "name": "donor",
-          "value": ".false.",
-          "description": "use default Van-Leer second-order scheme"
-        },
-        {
-          "name": "meshon",
-          "value": ".false.",
-          "description": "compute ideal mesh each computational cycle"
-        },
-        {
-          "name": "zeroghcl",
-          "value": ".false.",
-          "description": "if true"
-        },
-        {
-          "name": "!   nigen",
-          "value": "10",
-          "description": "# of initial Jacobi iterations of ideal mesh gen"
-        },
-        {
-          "name": "niter",
-          "value": "3",
-          "description": "# of Jacobi iterations of ideal mesh generator i"
-        },
-        {
-          "name": "eqvol",
-          "value": "0.01",
-          "description": "overall multiplier of adaptivity weight function"
-        },
-        {
-          "name": "orthog",
-          "value": "1.0e10",
-          "description": "larger values attempt to make cells orthogonal"
-        },
-        {
-          "name": "nsmooth",
-          "value": "5",
-          "description": "number of smoothing steps applied to the adaptiv"
-        },
-        {
-          "name": "!   wrelax",
-          "value": "1",
-          "description": "smooths adaptivity function of wrelax # of cells"
-        },
-        {
-          "name": "!    mu",
-          "value": "1.0",
-          "description": "coefficient for artificial viscosity"
-        },
-        {
-          "name": "eps",
-          "value": "1.0e-6",
-          "description": "convergence tolerance for relative error in HYDR"
-        },
-        {
-          "name": "conserv",
-          "value": "0.0",
-          "description": "if non-zero"
-        },
-        {
-          "name": "magon",
-          "value": ".true.",
-          "description": "calculate magnetic fields"
-        },
-        {
-          "name": "brbzon",
-          "value": ".true.",
-          "description": "include the in-plane components of the magnetic"
-        },
-        {
-          "name": "radiate",
-          "value": ".true.",
-          "description": "compute radiative losses"
-        },
-        {
-          "name": "radmodl",
-          "value": "'neqdiff'",
-          "description": "calculate losses due to emission"
-        },
-        {
-          "name": "radcupl",
-          "value": "'integrtd'",
-          "description": ""
-        },
-        {
-          "name": "!    radcupl",
-          "value": ".true.",
-          "description": ""
-        },
-        {
-          "name": "radflxlt",
-          "value": ".true.",
-          "description": ""
-        },
-        {
-          "name": "radsize",
-          "value": "0.001",
-          "description": ""
-        },
-        {
-          "name": "!    flxlmt",
-          "value": "0.0",
-          "description": ""
-        },
-        {
-          "name": "ciron",
-          "value": ".true.",
-          "description": "compute in-plane driving electric current across"
-        },
-        {
-          "name": "flxcirc",
-          "value": ".true.",
-          "description": "use magnetic flux to calculate load voltage in p"
-        },
-        {
-          "name": "multgrd",
-          "value": ".false.",
-          "description": "switch to enable multigrid"
-        },
-        {
-          "name": "thmldif",
-          "value": ".true.",
-          "description": "compute thermal diffusion"
-        },
-        {
-          "name": "anisot",
-          "value": ".true.",
-          "description": "include B-field-induced anisotropic effects"
-        },
-        {
-          "name": "mgmodet",
-          "value": "'converge'",
-          "description": "method for progressing through multigrid levels"
-        },
-        {
-          "name": "nthrmax",
-          "value": "6000",
-          "description": "max # of iterations of solver per cycle"
-        },
-        {
-          "name": "tdrelax",
-          "value": "1",
-          "description": "coefficient of relaxation factor applied to temp"
-        },
-        {
-          "name": "curthrmx",
-          "value": "1.0e4",
-          "description": ""
-        },
-        {
-          "name": "tdtol",
-          "value": "1.0e-4",
-          "description": "convergence toleranc for relative error in tempe"
-        },
-        {
-          "name": "!   tdtolcg",
-          "value": "0.25",
-          "description": "convergence criterion for the maximum ratio of r"
-        },
-        {
-          "name": "!    arttherm",
-          "value": ".false.",
-          "description": "smoother for an artificla thermal conductivity"
-        },
-        {
-          "name": "!    artthmlt",
-          "value": "3.0",
-          "description": "overall multiplier of the artificial thermal co"
-        },
-        {
-          "name": "bdiff",
-          "value": ".true.",
-          "description": "computer resistive diffusion of B-field"
-        },
-        {
-          "name": "mgmode",
-          "value": "'converge'",
-          "description": "method for progressing through multigrid levels"
-        },
-        {
-          "name": "itmaxrd",
-          "value": "6000",
-          "description": "max # of iterations of solver per cycle"
-        },
-        {
-          "name": "rdrelax",
-          "value": "1.0",
-          "description": "relaxation multiplier applied to magnetic field"
-        },
-        {
-          "name": "rdtol",
-          "value": "1.0e-4",
-          "description": "convergence tolerance for relative error in B-fi"
-        },
-        {
-          "name": "!   rdtolcg",
-          "value": "0.25",
-          "description": "convergence criterion for the maximum ratio of r"
-        }
-      ]
+{
+  "variables": [
+    {
+      "data": {
+        "parameters": [
+          {
+            "isValid": "true",
+            "name": "twfn",
+            "value": "200.0e-9",
+            "description": "problem end time"
+          },
+          {
+            "isValid": "true",
+            "name": "dt",
+            "value": "1.0e-13",
+            "description": "initial time step"
+          },
+          {
+            "isValid": "true",
+            "name": "dtmax",
+            "value": "1.0e-9",
+            "description": "maximum time step"
+          },
+          {
+            "isValid": "true",
+            "name": "dtstopr",
+            "value": "1.0e-20",
+            "description": "minimum time step"
+          },
+          {
+            "isValid": "true",
+            "name": "cyl",
+            "value": "1.",
+            "description": "cylindrical geometry"
+          },
+          {
+            "isValid": "true",
+            "name": "eoson",
+            "value": ".true.",
+            "description": "calculate EOS"
+          },
+          {
+            "isValid": "true",
+            "name": "trackon",
+            "value": ".true.",
+            "description": "allow materials to mix"
+          },
+          {
+            "isValid": "true",
+            "name": "tsplit",
+            "value": "1",
+            "description": "ion and electron temperatures calculated separat"
+          },
+          {
+            "isValid": "true",
+            "name": "hydron",
+            "value": ".true.",
+            "description": "solve ideal MHD"
+          },
+          {
+            "isValid": "true",
+            "name": "rotate",
+            "value": ".true.",
+            "description": "allows the out-of-plane component of velocity t"
+          },
+          {
+            "isValid": "true",
+            "name": "strength",
+            "value": ".false.",
+            "description": "switch for strength-of-materials package"
+          },
+          {
+            "isValid": "true",
+            "name": "jouhtmlt",
+            "value": "1.0",
+            "description": "multiplier for Ohmic heating"
+          },
+          {
+            "isValid": "true",
+            "name": "hallon",
+            "value": ".false.",
+            "description": "switch to include Hall effect in resistive diffu"
+          },
+          {
+            "isValid": "true",
+            "name": "neutrons",
+            "value": ".true.",
+            "description": "calculate neutron yield"
+          },
+          {
+            "isValid": "true",
+            "name": "alphaheat",
+            "value": ".true.",
+            "description": "calculate alpha-particle heating"
+          },
+          {
+            "isValid": "true",
+            "name": "aresvac",
+            "value": "1.0e4",
+            "description": "Anomalous diffusivity in vacuum region"
+          },
+          {
+            "isValid": "true",
+            "name": "theb",
+            "value": "0.5",
+            "description": "use centered time difference"
+          },
+          {
+            "isValid": "true",
+            "name": "courmax",
+            "value": "0.99",
+            "description": "max(dtcour)"
+          },
+          {
+            "isValid": "true",
+            "name": "rmvolrm",
+            "value": "0.3",
+            "description": "dtc set such that no more than rmvolrm of a cell"
+          },
+          {
+            "isValid": "true",
+            "name": "volratm",
+            "value": "0.7",
+            "description": "dtvol set such that no cell's volume changes by"
+          },
+          {
+            "isValid": "true",
+            "name": "donor",
+            "value": ".false.",
+            "description": "use default Van-Leer second-order scheme"
+          },
+          {
+            "isValid": "true",
+            "name": "meshon",
+            "value": ".false.",
+            "description": "compute ideal mesh each computational cycle"
+          },
+          {
+            "isValid": "true",
+            "name": "zeroghcl",
+            "value": ".false.",
+            "description": "if true"
+          },
+          {
+            "isValid": "false",
+            "name": "nigen",
+            "value": "10",
+            "description": "# of initial Jacobi iterations of ideal mesh gen"
+          },
+          {
+            "isValid": "true",
+            "name": "niter",
+            "value": "3",
+            "description": "# of Jacobi iterations of ideal mesh generator i"
+          },
+          {
+            "isValid": "true",
+            "name": "eqvol",
+            "value": "0.01",
+            "description": "overall multiplier of adaptivity weight function"
+          },
+          {
+            "isValid": "true",
+            "name": "orthog",
+            "value": "1.0e10",
+            "description": "larger values attempt to make cells orthogonal"
+          },
+          {
+            "isValid": "true",
+            "name": "nsmooth",
+            "value": "5",
+            "description": "number of smoothing steps applied to the adaptiv"
+          },
+          {
+            "isValid": "false",
+            "name": "wrelax",
+            "value": "1",
+            "description": "smooths adaptivity function of wrelax # of cells"
+          },
+          {
+            "isValid": "false",
+            "name": "mu",
+            "value": "1.0",
+            "description": "coefficient for artificial viscosity"
+          },
+          {
+            "isValid": "true",
+            "name": "eps",
+            "value": "1.0e-6",
+            "description": "convergence tolerance for relative error in HYDR"
+          },
+          {
+            "isValid": "true",
+            "name": "conserv",
+            "value": "0.0",
+            "description": "if non-zero"
+          },
+          {
+            "isValid": "true",
+            "name": "magon",
+            "value": ".true.",
+            "description": "calculate magnetic fields"
+          },
+          {
+            "isValid": "true",
+            "name": "brbzon",
+            "value": ".true.",
+            "description": "include the in-plane components of the magnetic"
+          },
+          {
+            "isValid": "true",
+            "name": "radiate",
+            "value": ".true.",
+            "description": "compute radiative losses"
+          },
+          {
+            "isValid": "true",
+            "name": "radmodl",
+            "value": "'neqdiff'",
+            "description": "calculate losses due to emission"
+          },
+          {
+            "isValid": "true",
+            "name": "radcupl",
+            "value": "'integrtd'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "radcupl",
+            "value": ".true.",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "radflxlt",
+            "value": ".true.",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "radsize",
+            "value": "0.001",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "flxlmt",
+            "value": "0.0",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ciron",
+            "value": ".true.",
+            "description": "compute in-plane driving electric current across"
+          },
+          {
+            "isValid": "true",
+            "name": "flxcirc",
+            "value": ".true.",
+            "description": "use magnetic flux to calculate load voltage in p"
+          },
+          {
+            "isValid": "true",
+            "name": "multgrd",
+            "value": ".false.",
+            "description": "switch to enable multigrid"
+          },
+          {
+            "isValid": "true",
+            "name": "thmldif",
+            "value": ".true.",
+            "description": "compute thermal diffusion"
+          },
+          {
+            "isValid": "true",
+            "name": "anisot",
+            "value": ".true.",
+            "description": "include B-field-induced anisotropic effects"
+          },
+          {
+            "isValid": "true",
+            "name": "mgmodet",
+            "value": "'converge'",
+            "description": "method for progressing through multigrid levels"
+          },
+          {
+            "isValid": "true",
+            "name": "nthrmax",
+            "value": "6000",
+            "description": "max # of iterations of solver per cycle"
+          },
+          {
+            "isValid": "true",
+            "name": "tdrelax",
+            "value": "1",
+            "description": "coefficient of relaxation factor applied to temp"
+          },
+          {
+            "isValid": "true",
+            "name": "curthrmx",
+            "value": "1.0e4",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "tdtol",
+            "value": "1.0e-4",
+            "description": "convergence toleranc for relative error in tempe"
+          },
+          {
+            "isValid": "false",
+            "name": "tdtolcg",
+            "value": "0.25",
+            "description": "convergence criterion for the maximum ratio of r"
+          },
+          {
+            "isValid": "false",
+            "name": "arttherm",
+            "value": ".false.",
+            "description": "smoother for an artificla thermal conductivity"
+          },
+          {
+            "isValid": "false",
+            "name": "artthmlt",
+            "value": "3.0",
+            "description": "overall multiplier of the artificial thermal co"
+          },
+          {
+            "isValid": "true",
+            "name": "bdiff",
+            "value": ".true.",
+            "description": "computer resistive diffusion of B-field"
+          },
+          {
+            "isValid": "true",
+            "name": "mgmode",
+            "value": "'converge'",
+            "description": "method for progressing through multigrid levels"
+          },
+          {
+            "isValid": "true",
+            "name": "itmaxrd",
+            "value": "6000",
+            "description": "max # of iterations of solver per cycle"
+          },
+          {
+            "isValid": "true",
+            "name": "rdrelax",
+            "value": "1.0",
+            "description": "relaxation multiplier applied to magnetic field"
+          },
+          {
+            "isValid": "true",
+            "name": "rdtol",
+            "value": "1.0e-4",
+            "description": "convergence tolerance for relative error in B-fi"
+          },
+          {
+            "isValid": "false",
+            "name": "rdtolcg",
+            "value": "0.25",
+            "description": "convergence criterion for the maximum ratio of r"
+          }
+        ]
+      },
+      "type": "var",
+      "description": "",
+      "name": "contrl"
     },
-    "type": "var",
-    "description": "",
-    "name": "contrl"
-  },
-  {
-    "data": {
-      "parameters": [
-        {
-          "name": "volttype(1)",
-          "value": "'zebra'",
-          "description": "Zebra-style external circuit"
-        },
-        {
-          "name": "circtype(1)",
-          "value": "'rlc'",
-          "description": "Single-loop RL circuit"
-        },
-        {
-          "name": "exres(1)",
-          "value": "2.3",
-          "description": "R0"
-        },
-        {
-          "name": "exind(1)",
-          "value": "69.0e-9",
-          "description": "L0"
-        },
-        {
-          "name": "capac(1)",
-          "value": "0.0",
-          "description": "C0"
-        },
-        {
-          "name": "current(1)",
-          "value": "0.0",
-          "description": "No initial current"
-        }
-      ]
+    {
+      "data": {
+        "parameters": [
+          {
+            "isValid": "true",
+            "name": "volttype(1)",
+            "value": "'zebra'",
+            "description": "Zebra-style external circuit"
+          },
+          {
+            "isValid": "true",
+            "name": "circtype(1)",
+            "value": "'rlc'",
+            "description": "Single-loop RL circuit"
+          },
+          {
+            "isValid": "true",
+            "name": "exres(1)",
+            "value": "2.3",
+            "description": "R0"
+          },
+          {
+            "isValid": "true",
+            "name": "exind(1)",
+            "value": "69.0e-9",
+            "description": "L0"
+          },
+          {
+            "isValid": "true",
+            "name": "capac(1)",
+            "value": "0.0",
+            "description": "C0"
+          },
+          {
+            "isValid": "true",
+            "name": "current(1)",
+            "value": "0.0",
+            "description": "No initial current"
+          }
+        ]
+      },
+      "type": "var",
+      "description": "",
+      "name": "curnt"
     },
-    "type": "var",
-    "description": "",
-    "name": "curnt"
-  },
-  {
-    "data": {
-      "parameters": [
-        {
-          "name": "dtpost",
-          "value": "1.0e-9",
-          "description": "Output every 5 ns during Ohmic heating phase"
-        },
-        {
-          "name": "hdfon",
-          "value": ".true.",
-          "description": ""
-        },
-        {
-          "name": "ncycpost",
-          "value": "100",
-          "description": ""
-        },
-        {
-          "name": "intty(1)",
-          "value": "'edits",
-          "description": "10'"
-        },
-        {
-          "name": "intty(2)",
-          "value": "'0       '",
-          "description": ""
-        },
-        {
-          "name": "ncyctty",
-          "value": "100",
-          "description": ""
-        },
-        {
-          "name": "dthist",
-          "value": "0.1e-9",
-          "description": ""
-        },
-        {
-          "name": "histenrg",
-          "value": ".true.",
-          "description": "output energy budget equations to history file"
-        }
-      ]
+    {
+      "data": {
+        "parameters": [
+          {
+            "isValid": "true",
+            "name": "dtpost",
+            "value": "1.0e-9",
+            "description": "Output every 5 ns during Ohmic heating phase"
+          },
+          {
+            "isValid": "true",
+            "name": "hdfon",
+            "value": ".true.",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ncycpost",
+            "value": "100",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "intty(1)",
+            "value": "'edits",
+            "description": "10'"
+          },
+          {
+            "isValid": "true",
+            "name": "intty(2)",
+            "value": "'0       '",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ncyctty",
+            "value": "100",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "dthist",
+            "value": "0.1e-9",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "histenrg",
+            "value": ".true.",
+            "description": "output energy budget equations to history file"
+          }
+        ]
+      },
+      "type": "var",
+      "description": "",
+      "name": "output"
     },
-    "type": "var",
-    "description": "",
-    "name": "output"
-  },
-  {
-    "data": {
-      "parameters": [
-        {
-          "name": "gdvlg",
-          "value": "0.00",
-          "description": "Eulerian simulation"
-        },
-        {
-          "name": "arsmodlg",
-          "value": "'vacuum'",
-          "description": "Anomalous resistivity set to aresvac"
-        },
-        {
-          "name": "etamaxg",
-          "value": "1.0e3",
-          "description": "tdiff of 66.67 fs over 20 micron"
-        },
-        {
-          "name": "! 20 micron/66.67 fs",
-          "value": "3.0x10^8 m/s",
-          "description": ""
-        }
-      ]
+    {
+      "data": {
+        "parameters": [
+          {
+            "isValid": "true",
+            "name": "gdvlg",
+            "value": "0.00",
+            "description": "Eulerian simulation"
+          },
+          {
+            "isValid": "true",
+            "name": "arsmodlg",
+            "value": "'vacuum'",
+            "description": "Anomalous resistivity set to aresvac"
+          },
+          {
+            "isValid": "true",
+            "name": "etamaxg",
+            "value": "1.0e3",
+            "description": "tdiff of 66.67 fs over 20 micron"
+          },
+          {
+            "isValid": "false",
+            "name": "20 micron/66.67 fs",
+            "value": "3.0x10^8 m/s",
+            "description": ""
+          }
+        ]
+      },
+      "type": "var",
+      "description": "",
+      "name": "ezphys"
     },
-    "type": "var",
-    "description": "",
-    "name": "ezphys"
-  },
-  {
-    "data": {
-      "parameters": [
-        {
-          "name": "matnam(1)",
-          "value": "'d'",
-          "description": ""
-        },
-        {
-          "name": "sesanam(1)",
-          "value": "'d'",
-          "description": ""
-        },
-        {
-          "name": "eosmodl(1)",
-          "value": "'tabular'",
-          "description": ""
-        },
-        {
-          "name": "nfemodl(1)",
-          "value": "'constant'",
-          "description": ""
-        },
-        {
-          "name": "nfe0(1)",
-          "value": "1.0",
-          "description": ""
-        },
-        {
-          "name": "resmodl(1)",
-          "value": "'tabular'",
-          "description": ""
-        },
-        {
-          "name": "tcnmodl(1)",
-          "value": "'tabular'",
-          "description": ""
-        },
-        {
-          "name": "opacity(1)",
-          "value": "'tabular'",
-          "description": ""
-        },
-        {
-          "name": "rofrad(1)",
-          "value": "1.0e-7",
-          "description": ""
-        },
-        {
-          "name": "rocrad(1)",
-          "value": "1.0e3",
-          "description": ""
-        },
-        {
-          "name": "rof(1)",
-          "value": "3.32e-7",
-          "description": ""
-        },
-        {
-          "name": "rofhyd(1)",
-          "value": "3.32e-7",
-          "description": ""
-        },
-        {
-          "name": "rofvac(1)",
-          "value": "3.32e-7",
-          "description": ""
-        },
-        {
-          "name": "rofanom(1)",
-          "value": "3.32e-7",
-          "description": ""
-        },
-        {
-          "name": "rofjoule(1)",
-          "value": "3.32e-7",
-          "description": ""
-        },
-        {
-          "name": "rofsiecp(1)",
-          "value": "3.32e-7",
-          "description": ""
-        },
-        {
-          "name": "!    sieiflr(1)",
-          "value": "1.0e6",
-          "description": ""
-        },
-        {
-          "name": "!    sieflr(1)",
-          "value": "1.0e6",
-          "description": ""
-        },
-        {
-          "name": "teflr(1)",
-          "value": "1.0",
-          "description": ""
-        },
-        {
-          "name": "tiflr(1)",
-          "value": "1.0",
-          "description": ""
-        },
-        {
-          "name": "tecap(1)",
-          "value": "100.0e3",
-          "description": ""
-        },
-        {
-          "name": "ticap(1)",
-          "value": "100.0e3",
-          "description": ""
-        },
-        {
-          "name": "gm1(1)",
-          "value": "0.66666667",
-          "description": ""
-        },
-        {
-          "name": "an(1)",
-          "value": "1.0",
-          "description": ""
-        },
-        {
-          "name": "aw(1)",
-          "value": "2.0",
-          "description": ""
-        },
-        {
-          "name": "!    matnam(2)",
-          "value": "'ne'",
-          "description": ""
-        },
-        {
-          "name": "!    sesanam(2)",
-          "value": "'ne-pl'",
-          "description": ""
-        },
-        {
-          "name": "!    eosmodl(2)",
-          "value": "'tabular'",
-          "description": ""
-        },
-        {
-          "name": "!    mattabs(1,20)",
-          "value": "9541",
-          "description": "19541"
-        },
-        {
-          "name": "!    nfemodl(2)",
-          "value": "'zfree2'",
-          "description": ""
-        },
-        {
-          "name": "!    opacity(2)",
-          "value": "'neon'",
-          "description": ""
-        },
-        {
-          "name": "!    gm1(2)",
-          "value": "0.66666667",
-          "description": ""
-        },
-        {
-          "name": "!    an(2)",
-          "value": "10.0",
-          "description": ""
-        },
-        {
-          "name": "!    aw(2)",
-          "value": "20.18",
-          "description": ""
-        },
-        {
-          "name": "!    matnam(2)",
-          "value": "'ar'",
-          "description": ""
-        },
-        {
-          "name": "!    sesanam(2)",
-          "value": "'ar-mrc'",
-          "description": ""
-        },
-        {
-          "name": "!    eosmodl(2)",
-          "value": "'tabular'",
-          "description": ""
-        },
-        {
-          "name": "!    mattabs(1,26)",
-          "value": "9517",
-          "description": "18517"
-        },
-        {
-          "name": "!    nfemodl(2)",
-          "value": "'zfree3'",
-          "description": ""
-        },
-        {
-          "name": "!    opacity(2)",
-          "value": "'tabular'",
-          "description": ""
-        },
-        {
-          "name": "!    gm1(2)",
-          "value": "0.66666667",
-          "description": ""
-        },
-        {
-          "name": "!    an(2)",
-          "value": "18.0",
-          "description": ""
-        },
-        {
-          "name": "!    aw(2)",
-          "value": "39.948",
-          "description": ""
-        },
-        {
-          "name": "matnam(2)",
-          "value": "'kr'",
-          "description": ""
-        },
-        {
-          "name": "sesanam(2)",
-          "value": "'kr'",
-          "description": ""
-        },
-        {
-          "name": "eosmodl(2)",
-          "value": "'tabular'",
-          "description": ""
-        },
-        {
-          "name": "mattabs(1,31)",
-          "value": "5181",
-          "description": "18181"
-        },
-        {
-          "name": "nfemodl(2)",
-          "value": "'zfree3'",
-          "description": ""
-        },
-        {
-          "name": "opacity(2)",
-          "value": "'tabular'",
-          "description": ""
-        },
-        {
-          "name": "gm1(2)",
-          "value": "0.66666667",
-          "description": ""
-        },
-        {
-          "name": "an(2)",
-          "value": "36.0",
-          "description": ""
-        },
-        {
-          "name": "aw(2)",
-          "value": "83.8",
-          "description": ""
-        },
-        {
-          "name": "!    matnam(2)",
-          "value": "'xe'",
-          "description": ""
-        },
-        {
-          "name": "!    sesanam(2)",
-          "value": "'xe'",
-          "description": ""
-        },
-        {
-          "name": "!    eosmodl(2)",
-          "value": "'tabular'",
-          "description": ""
-        },
-        {
-          "name": "!    mattabs(3,30)",
-          "value": "5190",
-          "description": "15190"
-        },
-        {
-          "name": "!    nfemodl(2)",
-          "value": "'zfree3'",
-          "description": ""
-        },
-        {
-          "name": "!    opacity(2)",
-          "value": "'xenon'",
-          "description": ""
-        },
-        {
-          "name": "!    gm1(2)",
-          "value": "0.66666667",
-          "description": ""
-        },
-        {
-          "name": "!    an(2)",
-          "value": "54.0",
-          "description": ""
-        },
-        {
-          "name": "!    aw(2)",
-          "value": "131.3",
-          "description": ""
-        },
-        {
-          "name": "resmodl(2)",
-          "value": "'tabular'",
-          "description": ""
-        },
-        {
-          "name": "tcnmodl(2)",
-          "value": "'tabular'",
-          "description": ""
-        },
-        {
-          "name": "!    atamin(2)",
-          "value": "0",
-          "description": ""
-        },
-        {
-          "name": "!    atamax(2)",
-          "value": "0",
-          "description": ""
-        },
-        {
-          "name": "rof(2)",
-          "value": "1.0e-8",
-          "description": ""
-        },
-        {
-          "name": "rofhyd(2)",
-          "value": "1.0e-8",
-          "description": ""
-        },
-        {
-          "name": "rofvac(2)",
-          "value": "1.0e-7",
-          "description": ""
-        },
-        {
-          "name": "rofanom(2)",
-          "value": "1.0e-7",
-          "description": ""
-        },
-        {
-          "name": "rofjoule(2)",
-          "value": "1.0e-7",
-          "description": ""
-        },
-        {
-          "name": "rofrad(2)",
-          "value": "1.0e-8",
-          "description": ""
-        },
-        {
-          "name": "rocrad(2)",
-          "value": "1.0e3",
-          "description": ""
-        },
-        {
-          "name": "!    rofsiecp(2)",
-          "value": "1.0e-7",
-          "description": ""
-        },
-        {
-          "name": "sieiflr(2)",
-          "value": "1.0e8",
-          "description": ""
-        },
-        {
-          "name": "sieflr(2)",
-          "value": "1.0e8",
-          "description": ""
-        },
-        {
-          "name": "teflr(2)",
-          "value": "1.000",
-          "description": ""
-        },
-        {
-          "name": "tiflr(2)",
-          "value": "1.000",
-          "description": ""
-        },
-        {
-          "name": "tecap(2)",
-          "value": "100.0",
-          "description": ""
-        },
-        {
-          "name": "ticap(2)",
-          "value": "100.0",
-          "description": ""
-        }
-      ]
+    {
+      "data": {
+        "parameters": [
+          {
+            "isValid": "true",
+            "name": "matnam(1)",
+            "value": "'d'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "sesanam(1)",
+            "value": "'d'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "eosmodl(1)",
+            "value": "'tabular'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "nfemodl(1)",
+            "value": "'constant'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "nfe0(1)",
+            "value": "1.0",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "resmodl(1)",
+            "value": "'tabular'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "tcnmodl(1)",
+            "value": "'tabular'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "opacity(1)",
+            "value": "'tabular'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "rofrad(1)",
+            "value": "1.0e-7",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "rocrad(1)",
+            "value": "1.0e3",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "rof(1)",
+            "value": "3.32e-7",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "rofhyd(1)",
+            "value": "3.32e-7",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "rofvac(1)",
+            "value": "3.32e-7",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "rofanom(1)",
+            "value": "3.32e-7",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "rofjoule(1)",
+            "value": "3.32e-7",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "rofsiecp(1)",
+            "value": "3.32e-7",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "sieiflr(1)",
+            "value": "1.0e6",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "sieflr(1)",
+            "value": "1.0e6",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "teflr(1)",
+            "value": "1.0",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "tiflr(1)",
+            "value": "1.0",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "tecap(1)",
+            "value": "100.0e3",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ticap(1)",
+            "value": "100.0e3",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "gm1(1)",
+            "value": "0.66666667",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "an(1)",
+            "value": "1.0",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "aw(1)",
+            "value": "2.0",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "matnam(2)",
+            "value": "'ne'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "sesanam(2)",
+            "value": "'ne-pl'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "eosmodl(2)",
+            "value": "'tabular'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "mattabs(1,20)",
+            "value": "9541",
+            "description": "19541"
+          },
+          {
+            "isValid": "false",
+            "name": "nfemodl(2)",
+            "value": "'zfree2'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "opacity(2)",
+            "value": "'neon'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "gm1(2)",
+            "value": "0.66666667",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "an(2)",
+            "value": "10.0",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "aw(2)",
+            "value": "20.18",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "matnam(2)",
+            "value": "'ar'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "sesanam(2)",
+            "value": "'ar-mrc'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "eosmodl(2)",
+            "value": "'tabular'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "mattabs(1,26)",
+            "value": "9517",
+            "description": "18517"
+          },
+          {
+            "isValid": "false",
+            "name": "nfemodl(2)",
+            "value": "'zfree3'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "opacity(2)",
+            "value": "'tabular'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "gm1(2)",
+            "value": "0.66666667",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "an(2)",
+            "value": "18.0",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "aw(2)",
+            "value": "39.948",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "matnam(2)",
+            "value": "'kr'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "sesanam(2)",
+            "value": "'kr'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "eosmodl(2)",
+            "value": "'tabular'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "mattabs(1,31)",
+            "value": "5181",
+            "description": "18181"
+          },
+          {
+            "isValid": "true",
+            "name": "nfemodl(2)",
+            "value": "'zfree3'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "opacity(2)",
+            "value": "'tabular'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "gm1(2)",
+            "value": "0.66666667",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "an(2)",
+            "value": "36.0",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "aw(2)",
+            "value": "83.8",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "matnam(2)",
+            "value": "'xe'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "sesanam(2)",
+            "value": "'xe'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "eosmodl(2)",
+            "value": "'tabular'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "mattabs(3,30)",
+            "value": "5190",
+            "description": "15190"
+          },
+          {
+            "isValid": "false",
+            "name": "nfemodl(2)",
+            "value": "'zfree3'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "opacity(2)",
+            "value": "'xenon'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "gm1(2)",
+            "value": "0.66666667",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "an(2)",
+            "value": "54.0",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "aw(2)",
+            "value": "131.3",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "resmodl(2)",
+            "value": "'tabular'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "tcnmodl(2)",
+            "value": "'tabular'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "atamin(2)",
+            "value": "0",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "atamax(2)",
+            "value": "0",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "rof(2)",
+            "value": "1.0e-8",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "rofhyd(2)",
+            "value": "1.0e-8",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "rofvac(2)",
+            "value": "1.0e-7",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "rofanom(2)",
+            "value": "1.0e-7",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "rofjoule(2)",
+            "value": "1.0e-7",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "rofrad(2)",
+            "value": "1.0e-8",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "rocrad(2)",
+            "value": "1.0e3",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "rofsiecp(2)",
+            "value": "1.0e-7",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "sieiflr(2)",
+            "value": "1.0e8",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "sieflr(2)",
+            "value": "1.0e8",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "teflr(2)",
+            "value": "1.000",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "tiflr(2)",
+            "value": "1.000",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "tecap(2)",
+            "value": "100.0",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ticap(2)",
+            "value": "100.0",
+            "description": ""
+          }
+        ]
+      },
+      "type": "var",
+      "description": "",
+      "name": "matmdl"
     },
-    "type": "var",
-    "description": "",
-    "name": "matmdl"
-  },
-  {
-    "data": {
-      "parameters": [
-        {
-          "name": "nblk",
-          "value": "5",
-          "description": ""
-        },
-        {
-          "name": "npnts",
-          "value": "12",
-          "description": ""
-        },
-        {
-          "name": "pointx(1)",
-          "value": "0.000e-2",
-          "description": "pointy(1)"
-        },
-        {
-          "name": "pointx(2)",
-          "value": "0.100e-2",
-          "description": "pointy(2)"
-        },
-        {
-          "name": "pointx(3)",
-          "value": "0.100e-2",
-          "description": "pointy(3)"
-        },
-        {
-          "name": "pointx(4)",
-          "value": "0.000e-2",
-          "description": "pointy(4)"
-        },
-        {
-          "name": "pointx(5)",
-          "value": "0.900e-2",
-          "description": "pointy(5)"
-        },
-        {
-          "name": "pointx(6)",
-          "value": "0.900e-2",
-          "description": "pointy(6)"
-        },
-        {
-          "name": "pointx(7)",
-          "value": "1.200e-2",
-          "description": "pointy(7)"
-        },
-        {
-          "name": "pointx(8)",
-          "value": "1.200e-2",
-          "description": "pointy(8)"
-        },
-        {
-          "name": "pointx(9)",
-          "value": "1.700e-2",
-          "description": "pointy(9)"
-        },
-        {
-          "name": "pointx(10)",
-          "value": "1.700e-2",
-          "description": "pointy(10)"
-        },
-        {
-          "name": "pointx(11)",
-          "value": "2.000e-2",
-          "description": "pointy(11)"
-        },
-        {
-          "name": "pointx(12)",
-          "value": "2.000e-2",
-          "description": "pointy(12)"
-        },
-        {
-          "name": "corners(1,1)",
-          "value": "1",
-          "description": "2"
-        },
-        {
-          "name": "corners(1,2)",
-          "value": "2",
-          "description": "5"
-        },
-        {
-          "name": "corners(1,3)",
-          "value": "5",
-          "description": "7"
-        },
-        {
-          "name": "corners(1,4)",
-          "value": "7",
-          "description": "9"
-        },
-        {
-          "name": "corners(1,5)",
-          "value": "9",
-          "description": "11"
-        }
-      ]
+    {
+      "data": {
+        "parameters": [
+          {
+            "isValid": "true",
+            "name": "nblk",
+            "value": "5",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "npnts",
+            "value": "12",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "pointx(1)",
+            "value": "0.000e-2",
+            "description": "pointy(1)"
+          },
+          {
+            "isValid": "true",
+            "name": "pointx(2)",
+            "value": "0.100e-2",
+            "description": "pointy(2)"
+          },
+          {
+            "isValid": "true",
+            "name": "pointx(3)",
+            "value": "0.100e-2",
+            "description": "pointy(3)"
+          },
+          {
+            "isValid": "true",
+            "name": "pointx(4)",
+            "value": "0.000e-2",
+            "description": "pointy(4)"
+          },
+          {
+            "isValid": "true",
+            "name": "pointx(5)",
+            "value": "0.900e-2",
+            "description": "pointy(5)"
+          },
+          {
+            "isValid": "true",
+            "name": "pointx(6)",
+            "value": "0.900e-2",
+            "description": "pointy(6)"
+          },
+          {
+            "isValid": "true",
+            "name": "pointx(7)",
+            "value": "1.200e-2",
+            "description": "pointy(7)"
+          },
+          {
+            "isValid": "true",
+            "name": "pointx(8)",
+            "value": "1.200e-2",
+            "description": "pointy(8)"
+          },
+          {
+            "isValid": "true",
+            "name": "pointx(9)",
+            "value": "1.700e-2",
+            "description": "pointy(9)"
+          },
+          {
+            "isValid": "true",
+            "name": "pointx(10)",
+            "value": "1.700e-2",
+            "description": "pointy(10)"
+          },
+          {
+            "isValid": "true",
+            "name": "pointx(11)",
+            "value": "2.000e-2",
+            "description": "pointy(11)"
+          },
+          {
+            "isValid": "true",
+            "name": "pointx(12)",
+            "value": "2.000e-2",
+            "description": "pointy(12)"
+          },
+          {
+            "isValid": "true",
+            "name": "corners(1,1)",
+            "value": "1",
+            "description": "2"
+          },
+          {
+            "isValid": "true",
+            "name": "corners(1,2)",
+            "value": "2",
+            "description": "5"
+          },
+          {
+            "isValid": "true",
+            "name": "corners(1,3)",
+            "value": "5",
+            "description": "7"
+          },
+          {
+            "isValid": "true",
+            "name": "corners(1,4)",
+            "value": "7",
+            "description": "9"
+          },
+          {
+            "isValid": "true",
+            "name": "corners(1,5)",
+            "value": "9",
+            "description": "11"
+          }
+        ]
+      },
+      "type": "var",
+      "description": "",
+      "name": "ezgeom"
     },
-    "type": "var",
-    "description": "",
-    "name": "ezgeom"
-  },
-  {
-    "data": {
-      "parameters": [
-        {
-          "name": "icells(1)",
-          "value": "100",
-          "description": "jcells(1)"
-        },
-        {
-          "name": "icells(2)",
-          "value": "100",
-          "description": "jcells(2)"
-        },
-        {
-          "name": "icells(3)",
-          "value": "50",
-          "description": "jcells(3)"
-        },
-        {
-          "name": "icells(4)",
-          "value": "50",
-          "description": "jcells(4)"
-        },
-        {
-          "name": "icells(5)",
-          "value": "10",
-          "description": "jcells(5)"
-        },
-        {
-          "name": "!   gdvl(1)",
-          "value": "3.50",
-          "description": ""
-        },
-        {
-          "name": "!   gdvl(2)",
-          "value": "3.50",
-          "description": ""
-        },
-        {
-          "name": "!   gdvl(3)",
-          "value": "3.50",
-          "description": ""
-        },
-        {
-          "name": "!   gdvl(4)",
-          "value": "3.50",
-          "description": ""
-        },
-        {
-          "name": "!   gdvl(5)",
-          "value": "3.50",
-          "description": ""
-        },
-        {
-          "name": "!   prsgrwt(1)",
-          "value": "1.0e9",
-          "description": ""
-        },
-        {
-          "name": "!   prsgrwt(2)",
-          "value": "1.0e9",
-          "description": ""
-        },
-        {
-          "name": "!   prsgrwt(3)",
-          "value": "1.0e8",
-          "description": ""
-        },
-        {
-          "name": "!   prsgrwt(4)",
-          "value": "1.0e8",
-          "description": ""
-        },
-        {
-          "name": "!   prsgrwt(5)",
-          "value": "1.0e7",
-          "description": ""
-        },
-        {
-          "name": "!  gaussian function: ro",
-          "value": "roi * exp(-abs(rnomden) * (r - r0)^2)",
-          "description": ""
-        },
-        {
-          "name": "matnami(1)",
-          "value": "'d'",
-          "description": ""
-        },
-        {
-          "name": "roinit(1)",
-          "value": "'cfdintp'",
-          "description": ""
-        },
-        {
-          "name": "roinitfile(1)",
-          "value": "'D2_density_180us.txt'",
-          "description": ""
-        },
-        {
-          "name": "!    roi(1)",
-          "value": "3.0e-3",
-          "description": ""
-        },
-        {
-          "name": "!    roinit(1)",
-          "value": "'gausaxis'",
-          "description": ""
-        },
-        {
-          "name": "!    rnomden(1)",
-          "value": "9.0e1",
-          "description": ""
-        },
-        {
-          "name": "!    matnami(2)",
-          "value": "'d'",
-          "description": "roi(2)"
-        },
-        {
-          "name": "!    matnami(1)",
-          "value": "'ar'",
-          "description": ""
-        },
-        {
-          "name": "!    roinit(1)",
-          "value": "'cfdintp'",
-          "description": ""
-        },
-        {
-          "name": "ldnblk(1)",
-          "value": "0.02",
-          "description": ""
-        },
-        {
-          "name": "ropert(1)",
-          "value": "'random'",
-          "description": ""
-        },
-        {
-          "name": "roprtam(1)",
-          "value": "0.01",
-          "description": ""
-        },
-        {
-          "name": "matnami(2)",
-          "value": "'d'",
-          "description": ""
-        },
-        {
-          "name": "roinit(2)",
-          "value": "'cfdintp'",
-          "description": ""
-        },
-        {
-          "name": "roinitfile(2)",
-          "value": "'D2_density_180us.txt'",
-          "description": ""
-        },
-        {
-          "name": "ldnblk(2)",
-          "value": "0.02",
-          "description": ""
-        },
-        {
-          "name": "ropert(2)",
-          "value": "'random'",
-          "description": ""
-        },
-        {
-          "name": "roprtam(2)",
-          "value": "0.01",
-          "description": ""
-        },
-        {
-          "name": "matnami(3)",
-          "value": "'kr'",
-          "description": ""
-        },
-        {
-          "name": "roinit(3)",
-          "value": "'cfdintp'",
-          "description": ""
-        },
-        {
-          "name": "roinitfile(3)",
-          "value": "'Ar_8ps_250.txt'",
-          "description": ""
-        },
-        {
-          "name": "ldnblk(3)",
-          "value": "0.8",
-          "description": ""
-        },
-        {
-          "name": "ropert(3)",
-          "value": "'random'",
-          "description": ""
-        },
-        {
-          "name": "roprtam(3)",
-          "value": "0.01",
-          "description": ""
-        },
-        {
-          "name": "matnami(4)",
-          "value": "'kr'",
-          "description": ""
-        },
-        {
-          "name": "roinit(4)",
-          "value": "'cfdintp'",
-          "description": ""
-        },
-        {
-          "name": "roinitfile(4)",
-          "value": "'Ar_8ps_250.txt'",
-          "description": ""
-        },
-        {
-          "name": "ldnblk(4)",
-          "value": "0.8",
-          "description": ""
-        },
-        {
-          "name": "ropert(4)",
-          "value": "'random'",
-          "description": ""
-        },
-        {
-          "name": "roprtam(4)",
-          "value": "0.01",
-          "description": ""
-        },
-        {
-          "name": "matnami(5)",
-          "value": "'kr'",
-          "description": ""
-        },
-        {
-          "name": "roinit(5)",
-          "value": "'cfdintp'",
-          "description": ""
-        },
-        {
-          "name": "roinitfile(5)",
-          "value": "'Ar_8ps_250.txt'",
-          "description": ""
-        },
-        {
-          "name": "ldnblk(5)",
-          "value": "0.8",
-          "description": ""
-        },
-        {
-          "name": "ropert(5)",
-          "value": "'random'",
-          "description": ""
-        },
-        {
-          "name": "roprtam(5)",
-          "value": "0.01",
-          "description": ""
-        },
-        {
-          "name": "tempi(1)",
-          "value": "1.0",
-          "description": "tioni(1)"
-        },
-        {
-          "name": "tempi(2)",
-          "value": "1.0",
-          "description": "tioni(2)"
-        },
-        {
-          "name": "tempi(3)",
-          "value": "1.0",
-          "description": "tioni(3)"
-        },
-        {
-          "name": "tempi(4)",
-          "value": "1.0",
-          "description": "tioni(4)"
-        },
-        {
-          "name": "tempi(5)",
-          "value": "1.0",
-          "description": "tioni(5)"
-        },
-        {
-          "name": "hydbc(4,1)",
-          "value": "'axis'",
-          "description": ""
-        },
-        {
-          "name": "hydbc(2,5)",
-          "value": "'flowthru'",
-          "description": ""
-        },
-        {
-          "name": "roflow(2,5)",
-          "value": "1.0e-7",
-          "description": ""
-        },
-        {
-          "name": "tflow(2,5)",
-          "value": "1.0",
-          "description": ""
-        },
-        {
-          "name": "radbc(2,5)",
-          "value": "'conduct'",
-          "description": ""
-        },
-        {
-          "name": "tradbdy(2,5)",
-          "value": "1.0",
-          "description": ""
-        },
-        {
-          "name": "magbc(1,1)",
-          "value": "'contnutv'",
-          "description": "magbc(3"
-        },
-        {
-          "name": "magbc(1,2)",
-          "value": "'contnutv'",
-          "description": "magbc(3"
-        },
-        {
-          "name": "magbc(1,3)",
-          "value": "'contnutv'",
-          "description": "magbc(3"
-        },
-        {
-          "name": "magbc(1,4)",
-          "value": "'contnutv'",
-          "description": "magbc(3"
-        },
-        {
-          "name": "magbc(1,5)",
-          "value": "'contnutv'",
-          "description": "magbc(2"
-        },
-        {
-          "name": "magxybc(2,5)",
-          "value": "'specfied'",
-          "description": ""
-        },
-        {
-          "name": "bybdy(2,5)",
-          "value": "0.0",
-          "description": ""
-        },
-        {
-          "name": "currcir(2,5)",
-          "value": "1",
-          "description": ""
-        },
-        {
-          "name": "binit(1)",
-          "value": "'none'",
-          "description": "bxi(1)"
-        },
-        {
-          "name": "binit(2)",
-          "value": "'none'",
-          "description": "bxi(2)"
-        },
-        {
-          "name": "binit(3)",
-          "value": "'none'",
-          "description": "bxi(3)"
-        },
-        {
-          "name": "binit(4)",
-          "value": "'none'",
-          "description": "bxi(4)"
-        },
-        {
-          "name": "binit(5)",
-          "value": "'none'",
-          "description": "bxi(5)"
-        },
-        {
-          "name": "thrmbc(4,1)",
-          "value": "'axis'",
-          "description": ""
-        },
-        {
-          "name": "!    ionvel(1)",
-          "value": ".true.",
-          "description": ""
-        },
-        {
-          "name": "!    ionvel(2)",
-          "value": ".true.",
-          "description": ""
-        },
-        {
-          "name": "!    ionvel(3)",
-          "value": ".true.",
-          "description": ""
-        },
-        {
-          "name": "!    ionvel(4)",
-          "value": ".true.",
-          "description": ""
-        },
-        {
-          "name": "!    ionvel(5)",
-          "value": ".true.",
-          "description": ""
-        }
-      ]
+    {
+      "data": {
+        "parameters": [
+          {
+            "isValid": "true",
+            "name": "icells(1)",
+            "value": "100",
+            "description": "jcells(1)"
+          },
+          {
+            "isValid": "true",
+            "name": "icells(2)",
+            "value": "100",
+            "description": "jcells(2)"
+          },
+          {
+            "isValid": "true",
+            "name": "icells(3)",
+            "value": "50",
+            "description": "jcells(3)"
+          },
+          {
+            "isValid": "true",
+            "name": "icells(4)",
+            "value": "50",
+            "description": "jcells(4)"
+          },
+          {
+            "isValid": "true",
+            "name": "icells(5)",
+            "value": "10",
+            "description": "jcells(5)"
+          },
+          {
+            "isValid": "false",
+            "name": "gdvl(1)",
+            "value": "3.50",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "gdvl(2)",
+            "value": "3.50",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "gdvl(3)",
+            "value": "3.50",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "gdvl(4)",
+            "value": "3.50",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "gdvl(5)",
+            "value": "3.50",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "prsgrwt(1)",
+            "value": "1.0e9",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "prsgrwt(2)",
+            "value": "1.0e9",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "prsgrwt(3)",
+            "value": "1.0e8",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "prsgrwt(4)",
+            "value": "1.0e8",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "prsgrwt(5)",
+            "value": "1.0e7",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "gaussian function: ro",
+            "value": "roi * exp(-abs(rnomden) * (r - r0)^2)",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "matnami(1)",
+            "value": "'d'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roinit(1)",
+            "value": "'cfdintp'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roinitfile(1)",
+            "value": "'D2_density_180us.txt'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "roi(1)",
+            "value": "3.0e-3",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "roinit(1)",
+            "value": "'gausaxis'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "rnomden(1)",
+            "value": "9.0e1",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "matnami(2)",
+            "value": "'d'",
+            "description": "roi(2)"
+          },
+          {
+            "isValid": "false",
+            "name": "matnami(1)",
+            "value": "'ar'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "roinit(1)",
+            "value": "'cfdintp'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ldnblk(1)",
+            "value": "0.02",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ropert(1)",
+            "value": "'random'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roprtam(1)",
+            "value": "0.01",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "matnami(2)",
+            "value": "'d'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roinit(2)",
+            "value": "'cfdintp'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roinitfile(2)",
+            "value": "'D2_density_180us.txt'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ldnblk(2)",
+            "value": "0.02",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ropert(2)",
+            "value": "'random'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roprtam(2)",
+            "value": "0.01",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "matnami(3)",
+            "value": "'kr'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roinit(3)",
+            "value": "'cfdintp'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roinitfile(3)",
+            "value": "'Ar_8ps_250.txt'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ldnblk(3)",
+            "value": "0.8",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ropert(3)",
+            "value": "'random'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roprtam(3)",
+            "value": "0.01",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "matnami(4)",
+            "value": "'kr'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roinit(4)",
+            "value": "'cfdintp'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roinitfile(4)",
+            "value": "'Ar_8ps_250.txt'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ldnblk(4)",
+            "value": "0.8",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ropert(4)",
+            "value": "'random'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roprtam(4)",
+            "value": "0.01",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "matnami(5)",
+            "value": "'kr'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roinit(5)",
+            "value": "'cfdintp'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roinitfile(5)",
+            "value": "'Ar_8ps_250.txt'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ldnblk(5)",
+            "value": "0.8",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ropert(5)",
+            "value": "'random'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roprtam(5)",
+            "value": "0.01",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "tempi(1)",
+            "value": "1.0",
+            "description": "tioni(1)"
+          },
+          {
+            "isValid": "true",
+            "name": "tempi(2)",
+            "value": "1.0",
+            "description": "tioni(2)"
+          },
+          {
+            "isValid": "true",
+            "name": "tempi(3)",
+            "value": "1.0",
+            "description": "tioni(3)"
+          },
+          {
+            "isValid": "true",
+            "name": "tempi(4)",
+            "value": "1.0",
+            "description": "tioni(4)"
+          },
+          {
+            "isValid": "true",
+            "name": "tempi(5)",
+            "value": "1.0",
+            "description": "tioni(5)"
+          },
+          {
+            "isValid": "true",
+            "name": "hydbc(4,1)",
+            "value": "'axis'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "hydbc(2,5)",
+            "value": "'flowthru'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "roflow(2,5)",
+            "value": "1.0e-7",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "tflow(2,5)",
+            "value": "1.0",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "radbc(2,5)",
+            "value": "'conduct'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "tradbdy(2,5)",
+            "value": "1.0",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "magbc(1,1)",
+            "value": "'contnutv'",
+            "description": "magbc(3"
+          },
+          {
+            "isValid": "true",
+            "name": "magbc(1,2)",
+            "value": "'contnutv'",
+            "description": "magbc(3"
+          },
+          {
+            "isValid": "true",
+            "name": "magbc(1,3)",
+            "value": "'contnutv'",
+            "description": "magbc(3"
+          },
+          {
+            "isValid": "true",
+            "name": "magbc(1,4)",
+            "value": "'contnutv'",
+            "description": "magbc(3"
+          },
+          {
+            "isValid": "true",
+            "name": "magbc(1,5)",
+            "value": "'contnutv'",
+            "description": "magbc(2"
+          },
+          {
+            "isValid": "true",
+            "name": "magxybc(2,5)",
+            "value": "'specfied'",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "bybdy(2,5)",
+            "value": "0.0",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "currcir(2,5)",
+            "value": "1",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "binit(1)",
+            "value": "'none'",
+            "description": "bxi(1)"
+          },
+          {
+            "isValid": "true",
+            "name": "binit(2)",
+            "value": "'none'",
+            "description": "bxi(2)"
+          },
+          {
+            "isValid": "true",
+            "name": "binit(3)",
+            "value": "'none'",
+            "description": "bxi(3)"
+          },
+          {
+            "isValid": "true",
+            "name": "binit(4)",
+            "value": "'none'",
+            "description": "bxi(4)"
+          },
+          {
+            "isValid": "true",
+            "name": "binit(5)",
+            "value": "'none'",
+            "description": "bxi(5)"
+          },
+          {
+            "isValid": "true",
+            "name": "thrmbc(4,1)",
+            "value": "'axis'",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "ionvel(1)",
+            "value": ".true.",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "ionvel(2)",
+            "value": ".true.",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "ionvel(3)",
+            "value": ".true.",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "ionvel(4)",
+            "value": ".true.",
+            "description": ""
+          },
+          {
+            "isValid": "false",
+            "name": "ionvel(5)",
+            "value": ".true.",
+            "description": ""
+          }
+        ]
+      },
+      "type": "var",
+      "description": "",
+      "name": "inmesh"
     },
-    "type": "var",
-    "description": "",
-    "name": "inmesh"
-  },
-  {
-    "data": {
-      "parameters": [
-        {
-          "name": "tmod",
-          "value": "110.0e-9",
-          "description": ""
-        }
-      ]
+    {
+      "data": {
+        "parameters": [
+          {
+            "isValid": "true",
+            "name": "tmod",
+            "value": "110.0e-9",
+            "description": ""
+          }
+        ]
+      },
+      "type": "var",
+      "description": "",
+      "name": "modtim"
     },
-    "type": "var",
-    "description": "",
-    "name": "modtim"
-  },
-  {
-    "data": {
-      "parameters": [
-        {
-          "name": "dtpost",
-          "value": "0.05e-9",
-          "description": ""
-        },
-        {
-          "name": "ncycpost",
-          "value": "100",
-          "description": ""
-        },
-        {
-          "name": "intty(1)",
-          "value": "'edits",
-          "description": "10'"
-        },
-        {
-          "name": "intty(2)",
-          "value": "'00      '",
-          "description": ""
-        },
-        {
-          "name": "ncyctty",
-          "value": "100",
-          "description": ""
-        },
-        {
-          "name": "dthist",
-          "value": "0.05e-9",
-          "description": ""
-        }
-      ]
+    {
+      "data": {
+        "parameters": [
+          {
+            "isValid": "true",
+            "name": "dtpost",
+            "value": "0.05e-9",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ncycpost",
+            "value": "100",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "intty(1)",
+            "value": "'edits",
+            "description": "10'"
+          },
+          {
+            "isValid": "true",
+            "name": "intty(2)",
+            "value": "'00      '",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "ncyctty",
+            "value": "100",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "dthist",
+            "value": "0.05e-9",
+            "description": ""
+          }
+        ]
+      },
+      "type": "var",
+      "description": "",
+      "name": "output"
     },
-    "type": "var",
-    "description": "",
-    "name": "output"
-  },
-  {
-    "data": {
-      "parameters": [
-        {
-          "name": "tmod",
-          "value": "165.0e-9",
-          "description": ""
-        }
-      ]
+    {
+      "data": {
+        "parameters": [
+          {
+            "isValid": "true",
+            "name": "tmod",
+            "value": "165.0e-9",
+            "description": ""
+          }
+        ]
+      },
+      "type": "var",
+      "description": "",
+      "name": "modtim"
     },
-    "type": "var",
-    "description": "",
-    "name": "modtim"
-  },
-  {
-    "data": {
-      "parameters": [
-        {
-          "name": "dtpost",
-          "value": "1.0e-9",
-          "description": ""
-        },
-        {
-          "name": "dthist",
-          "value": "0.1e-9",
-          "description": ""
-        }
-      ]
-    },
-    "type": "var",
-    "description": "",
-    "name": "output"
-  }
-]
+    {
+      "data": {
+        "parameters": [
+          {
+            "isValid": "true",
+            "name": "dtpost",
+            "value": "1.0e-9",
+            "description": ""
+          },
+          {
+            "isValid": "true",
+            "name": "dthist",
+            "value": "0.1e-9",
+            "description": ""
+          }
+        ]
+      },
+      "type": "var",
+      "description": "",
+      "name": "output"
+    }
+  ]
+}

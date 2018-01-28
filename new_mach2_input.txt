@@ -1,0 +1,226 @@
+$contrl
+	twfn = 200.0e-9 ! problem end time
+	dt = 1.0e-13 ! initial time step
+	dtmax = 1.0e-9 ! maximum time step
+	dtstopr = 1.0e-20 ! minimum time step
+	cyl = 1. ! cylindrical geometry
+	eoson = .true. ! calculate EOS
+	trackon = .true. ! allow materials to mix
+	tsplit = 1 ! ion and electron temperatures calculated separat
+	hydron = .true. ! solve ideal MHD
+	rotate = .true. ! allows the out-of-plane component of velocity t
+	strength = .false. ! switch for strength-of-materials package
+	jouhtmlt = 1.0 ! multiplier for Ohmic heating
+	hallon = .false. ! switch to include Hall effect in resistive diffu
+	neutrons = .true. ! calculate neutron yield
+	alphaheat = .true. ! calculate alpha-particle heating
+	aresvac = 1.0e4 ! Anomalous diffusivity in vacuum region
+	theb = 0.5 ! use centered time difference
+	courmax = 0.99 ! max(dtcour)
+	rmvolrm = 0.3 ! dtc set such that no more than rmvolrm of a cell
+	volratm = 0.7 ! dtvol set such that no cell's volume changes by
+	donor = .false. ! use default Van-Leer second-order scheme
+	meshon = .false. ! compute ideal mesh each computational cycle
+	zeroghcl = .false. ! if true
+	niter = 3 ! # of Jacobi iterations of ideal mesh generator i
+	eqvol = 0.01 ! overall multiplier of adaptivity weight function
+	orthog = 1.0e10 ! larger values attempt to make cells orthogonal
+	nsmooth = 5 ! number of smoothing steps applied to the adaptiv
+	eps = 1.0e-6 ! convergence tolerance for relative error in HYDR
+	conserv = 0.0 ! if non-zero
+	magon = .true. ! calculate magnetic fields
+	brbzon = .true. ! include the in-plane components of the magnetic
+	radiate = .true. ! compute radiative losses
+	radmodl = 'neqdiff' ! calculate losses due to emission
+	radcupl = 'integrtd'
+	radflxlt = .true.
+	radsize = 0.001
+	ciron = .true. ! compute in-plane driving electric current across
+	flxcirc = .true. ! use magnetic flux to calculate load voltage in p
+	multgrd = .false. ! switch to enable multigrid
+	thmldif = .true. ! compute thermal diffusion
+	anisot = .true. ! include B-field-induced anisotropic effects
+	mgmodet = 'converge' ! method for progressing through multigrid levels
+	nthrmax = 6000 ! max # of iterations of solver per cycle
+	tdrelax = 1 ! coefficient of relaxation factor applied to temp
+	curthrmx = 1.0e4
+	tdtol = 1.0e-4 ! convergence toleranc for relative error in tempe
+	bdiff = .true. ! computer resistive diffusion of B-field
+	mgmode = 'converge' ! method for progressing through multigrid levels
+	itmaxrd = 6000 ! max # of iterations of solver per cycle
+	rdrelax = 1.0 ! relaxation multiplier applied to magnetic field
+	rdtol = 1.0e-4 ! convergence tolerance for relative error in B-fi
+$end
+$curnt
+	volttype(1) = 'zebra' ! Zebra-style external circuit
+	circtype(1) = 'rlc' ! Single-loop RL circuit
+	exres(1) = 2.3 ! R0
+	exind(1) = 69.0e-9 ! L0
+	capac(1) = 0.0 ! C0
+	current(1) = 0.0 ! No initial current
+$end
+$output
+	dtpost = 1.0e-9 ! Output every 5 ns during Ohmic heating phase
+	hdfon = .true.
+	ncycpost = 100
+	intty(1) = 'edits ! 10'
+	intty(2) = '0       '
+	ncyctty = 100
+	dthist = 0.1e-9
+	histenrg = .true. ! output energy budget equations to history file
+$end
+$ezphys
+	gdvlg = 0.00 ! Eulerian simulation
+	arsmodlg = 'vacuum' ! Anomalous resistivity set to aresvac
+	etamaxg = 1.0e3 ! tdiff of 66.67 fs over 20 micron
+$end
+$matmdl
+	matnam(1) = 'd'
+	sesanam(1) = 'd'
+	eosmodl(1) = 'tabular'
+	nfemodl(1) = 'constant'
+	nfe0(1) = 1.0
+	resmodl(1) = 'tabular'
+	tcnmodl(1) = 'tabular'
+	opacity(1) = 'tabular'
+	rofrad(1) = 1.0e-7
+	rocrad(1) = 1.0e3
+	rof(1) = 3.32e-7
+	rofhyd(1) = 3.32e-7
+	rofvac(1) = 3.32e-7
+	rofanom(1) = 3.32e-7
+	rofjoule(1) = 3.32e-7
+	rofsiecp(1) = 3.32e-7
+	teflr(1) = 1.0
+	tiflr(1) = 1.0
+	tecap(1) = 100.0e3
+	ticap(1) = 100.0e3
+	gm1(1) = 0.66666667
+	an(1) = 1.0
+	aw(1) = 2.0
+	matnam(2) = 'kr'
+	sesanam(2) = 'kr'
+	eosmodl(2) = 'tabular'
+	mattabs(1,31) = 5181 ! 18181
+	nfemodl(2) = 'zfree3'
+	opacity(2) = 'tabular'
+	gm1(2) = 0.66666667
+	an(2) = 36.0
+	aw(2) = 83.8
+	resmodl(2) = 'tabular'
+	tcnmodl(2) = 'tabular'
+	rof(2) = 1.0e-8
+	rofhyd(2) = 1.0e-8
+	rofvac(2) = 1.0e-7
+	rofanom(2) = 1.0e-7
+	rofjoule(2) = 1.0e-7
+	rofrad(2) = 1.0e-8
+	rocrad(2) = 1.0e3
+	sieiflr(2) = 1.0e8
+	sieflr(2) = 1.0e8
+	teflr(2) = 1.000
+	tiflr(2) = 1.000
+	tecap(2) = 100.0
+	ticap(2) = 100.0
+$end
+$ezgeom
+	nblk = 5
+	npnts = 12
+	pointx(1) = 0.000e-2 ! pointy(1)
+	pointx(2) = 0.100e-2 ! pointy(2)
+	pointx(3) = 0.100e-2 ! pointy(3)
+	pointx(4) = 0.000e-2 ! pointy(4)
+	pointx(5) = 0.900e-2 ! pointy(5)
+	pointx(6) = 0.900e-2 ! pointy(6)
+	pointx(7) = 1.200e-2 ! pointy(7)
+	pointx(8) = 1.200e-2 ! pointy(8)
+	pointx(9) = 1.700e-2 ! pointy(9)
+	pointx(10) = 1.700e-2 ! pointy(10)
+	pointx(11) = 2.000e-2 ! pointy(11)
+	pointx(12) = 2.000e-2 ! pointy(12)
+	corners(1,1) = 1 ! 2
+	corners(1,2) = 2 ! 5
+	corners(1,3) = 5 ! 7
+	corners(1,4) = 7 ! 9
+	corners(1,5) = 9 ! 11
+$end
+$inmesh
+	icells(1) = 100 ! jcells(1)
+	icells(2) = 100 ! jcells(2)
+	icells(3) = 50 ! jcells(3)
+	icells(4) = 50 ! jcells(4)
+	icells(5) = 10 ! jcells(5)
+	matnami(1) = 'd'
+	roinit(1) = 'cfdintp'
+	roinitfile(1) = 'D2_density_180us.txt'
+	ldnblk(1) = 0.02
+	ropert(1) = 'random'
+	roprtam(1) = 0.01
+	matnami(2) = 'd'
+	roinit(2) = 'cfdintp'
+	roinitfile(2) = 'D2_density_180us.txt'
+	ldnblk(2) = 0.02
+	ropert(2) = 'random'
+	roprtam(2) = 0.01
+	matnami(3) = 'kr'
+	roinit(3) = 'cfdintp'
+	roinitfile(3) = 'Ar_8ps_250.txt'
+	ldnblk(3) = 0.8
+	ropert(3) = 'random'
+	roprtam(3) = 0.01
+	matnami(4) = 'kr'
+	roinit(4) = 'cfdintp'
+	roinitfile(4) = 'Ar_8ps_250.txt'
+	ldnblk(4) = 0.8
+	ropert(4) = 'random'
+	roprtam(4) = 0.01
+	matnami(5) = 'kr'
+	roinit(5) = 'cfdintp'
+	roinitfile(5) = 'Ar_8ps_250.txt'
+	ldnblk(5) = 0.8
+	ropert(5) = 'random'
+	roprtam(5) = 0.01
+	tempi(1) = 1.0 ! tioni(1)
+	tempi(2) = 1.0 ! tioni(2)
+	tempi(3) = 1.0 ! tioni(3)
+	tempi(4) = 1.0 ! tioni(4)
+	tempi(5) = 1.0 ! tioni(5)
+	hydbc(4,1) = 'axis'
+	hydbc(2,5) = 'flowthru'
+	roflow(2,5) = 1.0e-7
+	tflow(2,5) = 1.0
+	radbc(2,5) = 'conduct'
+	tradbdy(2,5) = 1.0
+	magbc(1,1) = 'contnutv' ! magbc(3
+	magbc(1,2) = 'contnutv' ! magbc(3
+	magbc(1,3) = 'contnutv' ! magbc(3
+	magbc(1,4) = 'contnutv' ! magbc(3
+	magbc(1,5) = 'contnutv' ! magbc(2
+	magxybc(2,5) = 'specfied'
+	bybdy(2,5) = 0.0
+	currcir(2,5) = 1
+	binit(1) = 'none' ! bxi(1)
+	binit(2) = 'none' ! bxi(2)
+	binit(3) = 'none' ! bxi(3)
+	binit(4) = 'none' ! bxi(4)
+	binit(5) = 'none' ! bxi(5)
+	thrmbc(4,1) = 'axis'
+$end
+$modtim
+	tmod = 110.0e-9
+$end
+$output
+	dtpost = 0.05e-9
+	ncycpost = 100
+	intty(1) = 'edits ! 10'
+	intty(2) = '00      '
+	ncyctty = 100
+	dthist = 0.05e-9
+$end
+$modtim
+	tmod = 165.0e-9
+$end
+$output
+	dtpost = 1.0e-9
+	dthist = 0.1e-9
+$end
